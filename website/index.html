@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Join Angel and Razzty as they celebrate their wedding on December 22, 2026.">
+  <title>Angel &amp; Razzty — Wedding Invitation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f5ede0;
+      --ink: #362019;
+      --brown: #6b3728;
+      --gold: #ac7954;
+      --line: #d5b899;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-width: 0;
+      margin: 0;
+      background: #301a14;
+      color: var(--ink);
+      font-family: "Cormorant Garamond", Georgia, serif;
+    }
+
+    .invitation {
+      position: relative;
+      isolation: isolate;
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 0 clamp(18px, 5vw, 64px) clamp(28px, 6vh, 60px);
+      background:
+        linear-gradient(180deg, rgb(34 17 12 / 45%) 0%, rgb(34 17 12 / 8%) 30%, rgb(34 17 12 / 12%) 48%, rgb(34 17 12 / 62%) 100%),
+        url("../assets/wedding-rings-background.png") center / cover no-repeat;
+    }
+
+    .masthead {
+      width: min(100%, 1120px);
+      min-height: 72px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      border-bottom: 1px solid rgb(245 237 224 / 45%);
+      color: var(--paper);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      text-shadow: 0 1px 12px rgb(34 17 12 / 55%);
+    }
+
+    .monogram {
+      font-size: 25px;
+      letter-spacing: 3px;
+    }
+
+    .masthead-label,
+    .eyebrow,
+    .caption {
+      font-family: Inter, Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      line-height: 1.6;
+      text-transform: uppercase;
+    }
+
+    .masthead-label {
+      text-align: right;
+    }
+
+    main {
+      width: min(100%, 680px);
+      margin: auto;
+      padding: clamp(28px, 5vw, 48px);
+      background: rgb(48 26 20 / 74%);
+      color: var(--paper);
+      text-align: center;
+    }
+
+    .eyebrow {
+      margin: 0 0 clamp(20px, 3vw, 30px);
+      color: #ead2b1;
+      font-family: Inter, Arial, sans-serif;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(58px, 13vw, 100px);
+      font-weight: 400;
+      letter-spacing: 0.055em;
+      line-height: 0.9;
+      text-shadow: 0 2px 18px rgb(20 9 6 / 55%);
+    }
+
+    .ampersand {
+      display: block;
+      margin: 8px 0 5px;
+      color: #e2bd91;
+      font-size: clamp(38px, 7vw, 54px);
+      font-style: italic;
+      line-height: 1;
+    }
+
+    .date {
+      margin: clamp(24px, 4vw, 34px) 0 28px;
+      color: #f0dfc7;
+      font-size: clamp(21px, 3.4vw, 27px);
+      font-weight: 500;
+    }
+
+    .date span {
+      padding: 0 5px;
+      color: #e2bd91;
+    }
+
+    .rsvp-link {
+      min-width: 190px;
+      min-height: 54px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+      padding: 14px 28px;
+      background: #7a422e;
+      color: var(--paper);
+      font-family: Inter, Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-decoration: none;
+      transition: background-color 160ms ease, transform 160ms ease;
+    }
+
+    .rsvp-link:hover {
+      background: #96583c;
+      transform: translateY(-2px);
+    }
+
+    .rsvp-link:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 4px;
+    }
+
+    .music-toggle svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    .music-icon-pause {
+      display: none;
+    }
+
+    .music-toggle[aria-pressed="true"] .music-icon-play {
+      display: none;
+    }
+
+    .music-toggle[aria-pressed="true"] .music-icon-pause {
+      display: block;
+    }
+
+    .rsvp-arrow {
+      font-size: 21px;
+      letter-spacing: 0;
+    }
+
+    .caption {
+      margin: 26px 0 0;
+      color: #ead2b1;
+      font-family: Inter, Arial, sans-serif;
+    }
+
+    .music-player {
+      position: fixed;
+      right: max(16px, env(safe-area-inset-right));
+      bottom: max(16px, env(safe-area-inset-bottom));
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px 8px 8px;
+      border: 1px solid #ac7954;
+      border-radius: 999px;
+      background: #f5ede0;
+      color: #362019;
+      box-shadow: 0 4px 18px rgb(20 9 6 / 25%);
+      font: 11px Inter, Arial, sans-serif;
+    }
+
+    .music-toggle {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: #6b3728;
+      color: #f5ede0;
+      cursor: pointer;
+      font: 20px Georgia, serif;
+    }
+
+    .music-toggle:focus-visible {
+      outline: 3px solid #ac7954;
+      outline-offset: 3px;
+    }
+
+    .music-status {
+      max-width: 130px;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 480px) {
+      .invitation {
+        padding: 0 14px 22px;
+      }
+
+      .masthead {
+        min-height: 64px;
+      }
+
+      .masthead-label {
+        max-width: 150px;
+        font-size: 9px;
+        letter-spacing: 1.6px;
+      }
+
+      main {
+        padding: 28px 16px;
+      }
+
+      .eyebrow {
+        font-size: 9px;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        font-size: clamp(54px, 15vw, 72px);
+      }
+
+      .date {
+        margin: 24px 0 22px;
+        font-size: clamp(19px, 5vw, 22px);
+      }
+
+      .caption {
+        margin-top: 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="invitation">
+    <header class="masthead">
+      <div class="monogram" aria-label="Angel and Razzty">A / R</div>
+      <div class="masthead-label">The wedding invitation</div>
+    </header>
+
+    <main>
+      <p class="eyebrow">Together with our families</p>
+      <h1>ANGEL<span class="ampersand" aria-hidden="true">&amp;</span>RAZZTY</h1>
+      <p class="date">December 22, 2026 <span aria-hidden="true">|</span> Tuesday</p>
+      <a class="rsvp-link" href="second.html">
+        RSVP <span class="rsvp-arrow" aria-hidden="true">→</span>
+      </a>
+      <p class="caption">A celebration of love</p>
+    </main>
+  </div>
+  <div class="music-player">
+    <button class="music-toggle" id="music-toggle" type="button" aria-label="Play background music" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path class="music-icon-play" d="M7 4.5a1 1 0 0 1 1.5-.86l11 6.5a2.15 2.15 0 0 1 0 3.72l-11 6.5A1 1 0 0 1 7 19.5z"/>
+        <path class="music-icon-pause" d="M7 5h4v14H7zM15 5h4v14h-4z"/>
+      </svg>
+    </button>
+    <span class="music-status" id="music-status" role="status" aria-live="polite">Background music</span>
+  </div>
+  <audio id="wedding-music" loop preload="metadata">
+    <source src="../assets/audio/December%20Avenue%20-%20Saksi%20Ang%20Langit%20_%20LYRICS.mp3" type="audio/mpeg">
+  </audio>
+  <script src="../assets/wedding-music.js"></script>
+</body>
+</html>

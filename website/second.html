@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wedding day details, schedule, wedding party, sponsors, and guest notes for Angel and Razzty.">
+    <title>Angel &amp; Razzty — Wedding Details</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        min-width: 0;
+        margin: 0;
+        background: #f5ede0;
+        color: #362019;
+      }
+
+      #wedding-palette {
+        position: relative;
+        isolation: isolate;
+        background-color: #F8EDE5 !important;
+      }
+
+      #wedding-palette::after {
+        position: absolute;
+        z-index: 2;
+        inset: 0;
+        background-image:
+          linear-gradient(to right, rgb(190 107 84 / 30%) 1px, transparent 1px),
+          linear-gradient(to bottom, rgb(190 107 84 / 30%) 1px, transparent 1px);
+        background-size: 12px 12px;
+        content: "";
+        pointer-events: none;
+      }
+
+      #wedding-palette > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      #wedding-palette > .wedding-party-image,
+      #wedding-palette > .palette-swatch {
+        z-index: 3;
+      }
+
+      body > div {
+        width: 100%;
+        min-height: 100vh;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        overflow: visible !important;
+      }
+
+      body > div > div {
+        width: 100%;
+        max-width: 100%;
+        flex: none;
+      }
+
+      div[style*="padding-left: 28px"] {
+        padding-right: clamp(20px, 5vw, 72px) !important;
+        padding-left: clamp(20px, 5vw, 72px) !important;
+      }
+
+      div[style*="overflow: hidden"] {
+        overflow-wrap: anywhere;
+      }
+
+      div[style*="font-size: 62px"] {
+        font-size: clamp(46px, 9vw, 62px) !important;
+        line-height: 0.98 !important;
+      }
+
+      div[style*="font-size: 44px"] {
+        font-size: clamp(34px, 6vw, 44px) !important;
+        line-height: 1.08 !important;
+      }
+
+      div[style*="font-size: 22px"],
+      div[style*="font-size: 21px"] {
+        line-height: 1.45 !important;
+      }
+
+      img[style*="height: 340px"] {
+        width: 100% !important;
+        height: clamp(280px, 48vw, 480px) !important;
+        object-fit: contain;
+        object-position: center bottom;
+        background: #ebdecc;
+      }
+
+      div[style*="height: 145px"] {
+        height: clamp(125px, 24vw, 200px) !important;
+        background: #f5ede0;
+      }
+
+      div[style*="height: 145px"] img {
+        width: 100% !important;
+        height: 100% !important;
+        top: 0 !important;
+        left: 0 !important;
+        object-fit: cover;
+      }
+
+      div.wedding-party-image {
+        height: clamp(220px, 36vw, 340px) !important;
+      }
+
+      .wedding-party-image img {
+        position: static !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: contain !important;
+        object-position: center !important;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      .entourage-section {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+        padding: clamp(48px, 8vw, 88px) clamp(18px, 5vw, 64px);
+        background:
+          radial-gradient(ellipse at 50% 0, rgb(172 121 84 / 20%), transparent 58%),
+          #301a14;
+      }
+
+      .entourage-background-video {
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        opacity: 0.72;
+        pointer-events: none;
+      }
+
+      .entourage-section::before {
+        position: absolute;
+        z-index: 0;
+        inset: 0;
+        background: linear-gradient(180deg, rgb(36 20 15 / 34%), rgb(36 20 15 / 48%));
+        content: "";
+        pointer-events: none;
+      }
+
+      .entourage-shell {
+        position: relative;
+        z-index: 1;
+        width: min(100%, 1040px);
+        margin: 0 auto;
+      }
+
+      .entourage-heading {
+        margin-bottom: 28px;
+        color: #f5ede0;
+      }
+
+      .entourage-kicker {
+        margin: 0 0 10px;
+        color: #d5b899;
+        font: 10px Inter, Arial, sans-serif;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+      }
+
+      .entourage-title {
+        margin: 0;
+        font: 400 clamp(36px, 7vw, 52px)/1.05 "Cormorant Garamond", Georgia, serif;
+      }
+
+      .entourage-intro {
+        margin: 12px 0 0;
+        color: #ead2b1;
+        font: 16px/1.6 "Cormorant Garamond", Georgia, serif;
+      }
+
+      .entourage-track {
+        display: flex;
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        border-radius: 6px;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        overscroll-behavior-x: contain;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .entourage-track::-webkit-scrollbar {
+        display: none;
+      }
+
+      .entourage-slide {
+        flex: 0 0 100%;
+        min-width: 0;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+      }
+
+      .entourage-card {
+        position: relative;
+        isolation: isolate;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: clamp(24px, 4vw, 38px);
+        overflow: hidden;
+        padding: clamp(24px, 5.5vw, 58px);
+        border: 1px solid #ac7954;
+        background:
+          radial-gradient(ellipse at 50% 30%, rgb(255 255 255 / 55%), transparent 72%),
+          #f8f0e5;
+        box-shadow: 0 18px 48px rgb(15 7 4 / 28%);
+      }
+
+      .entourage-card::before,
+      .entourage-card::after {
+        position: absolute;
+        z-index: -1;
+        width: clamp(130px, 29%, 245px);
+        height: 190px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        content: "";
+        opacity: 0.35;
+        pointer-events: none;
+      }
+
+      .entourage-card::before {
+        top: 0;
+        left: 0;
+        background-image: url("../assets/floral-corner-left.png");
+        background-position: top left;
+      }
+
+      .entourage-card::after {
+        right: 0;
+        bottom: 0;
+        background-image: url("../assets/floral-corner-right.png");
+        background-position: bottom right;
+      }
+
+      .entourage-card-heading {
+        margin: 0;
+        color: #6b3728;
+        font: 400 clamp(28px, 5vw, 38px)/1.1 "Cormorant Garamond", Georgia, serif;
+        text-align: center;
+      }
+
+      .entourage-card-heading::after {
+        width: 56px;
+        height: 1px;
+        display: block;
+        margin: 14px auto 0;
+        background: #ac7954;
+        content: "";
+      }
+
+      .family-grid,
+      .sponsor-grid,
+      .wedding-party-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .family-card,
+      .entourage-group {
+        padding: clamp(14px, 3vw, 22px);
+        border: 1px solid rgb(172 121 84 / 45%);
+        background: rgb(255 255 255 / 55%);
+        text-align: center;
+      }
+
+      .entourage-group-title {
+        margin: 0 0 12px;
+        color: #8a5039;
+        font: 700 12px/1.4 Inter, Arial, sans-serif;
+        letter-spacing: 1.3px;
+        text-transform: uppercase;
+      }
+
+      .family-names,
+      .entourage-names {
+        margin: 0;
+        color: #43261d;
+        font: 400 clamp(16px, 2.5vw, 20px)/1.5 "Cormorant Garamond", Georgia, serif;
+      }
+
+      .family-names + .family-names,
+      .entourage-names + .entourage-names {
+        margin-top: 3px;
+      }
+
+      .sponsor-heading {
+        margin: 0 0 14px;
+        color: #8a5039;
+        font: 700 12px/1.4 Inter, Arial, sans-serif;
+        letter-spacing: 1.5px;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      .sponsor-card {
+        min-height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px;
+        border-bottom: 1px solid rgb(172 121 84 / 38%);
+        color: #43261d;
+        font: 400 clamp(15px, 2.2vw, 18px)/1.45 "Cormorant Garamond", Georgia, serif;
+        text-align: center;
+      }
+
+      .sponsor-card::before,
+      .sponsor-card::after {
+        color: #ac7954;
+        content: "✦";
+        font-size: 10px;
+      }
+
+      .wedding-party-grid {
+        gap: 14px;
+      }
+
+      .entourage-controls {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-top: 20px;
+        color: #f5ede0;
+        font: 11px Inter, Arial, sans-serif;
+      }
+
+      .entourage-arrows,
+      .entourage-pagination {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .entourage-arrow,
+      .entourage-dot {
+        display: grid;
+        place-items: center;
+        padding: 0;
+        border: 1px solid #ac7954;
+        background: transparent;
+        color: #f5ede0;
+        cursor: pointer;
+      }
+
+      .entourage-arrow {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        font: 20px Georgia, serif;
+      }
+
+      .entourage-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        transition: background-color 160ms ease, transform 160ms ease;
+      }
+
+      .entourage-dot[aria-current="true"] {
+        transform: scale(1.25);
+        background: #d5b899;
+      }
+
+      .entourage-arrow:hover:not(:disabled),
+      .entourage-arrow:focus-visible,
+      .entourage-dot:focus-visible {
+        outline: 2px solid #ead2b1;
+        outline-offset: 3px;
+      }
+
+      .entourage-arrow:disabled {
+        cursor: default;
+        opacity: 0.45;
+      }
+
+      @media (max-width: 480px) {
+        .entourage-section {
+          padding-right: 14px;
+          padding-left: 14px;
+        }
+
+        .entourage-heading {
+          margin-bottom: 20px;
+        }
+
+        .family-grid,
+        .sponsor-grid,
+        .wedding-party-grid {
+          gap: 9px;
+        }
+
+        .family-card,
+        .entourage-group {
+          padding: 12px 9px;
+        }
+
+        .entourage-group-title,
+        .sponsor-heading {
+          font-size: 10px;
+          letter-spacing: 0.8px;
+        }
+
+        .family-names,
+        .entourage-names {
+          font-size: 16px;
+        }
+
+        .sponsor-card {
+          min-height: 50px;
+          gap: 5px;
+          padding: 8px 4px;
+          font-size: 15px;
+        }
+
+        .sponsor-card::before,
+        .sponsor-card::after {
+          font-size: 8px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .entourage-track {
+          scroll-behavior: auto;
+        }
+
+        .entourage-dot {
+          transition: none;
+        }
+
+        .entourage-background-video {
+          display: none;
+        }
+      }
+
+      .video-invitation-hero {
+        position: relative;
+        isolation: isolate;
+        min-height: 100vh;
+        min-height: 100svh;
+        display: grid;
+        grid-template-rows: auto 1fr;
+        overflow: hidden;
+        padding: 0 clamp(18px, 5vw, 64px) 28px;
+        background: #301a14 url("../assets/wedding-rings-background.png") center / cover no-repeat;
+        color: #F5EDE0;
+      }
+
+      .video-invitation-hero::before {
+        position: absolute;
+        z-index: 0;
+        inset: 0;
+        background: linear-gradient(180deg, rgb(34 17 12 / 55%) 0%, rgb(34 17 12 / 18%) 35%, rgb(34 17 12 / 35%) 65%, rgb(34 17 12 / 72%) 100%);
+        content: "";
+        pointer-events: none;
+      }
+
+      .video-hero-background {
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .video-hero-masthead {
+        position: relative;
+        z-index: 1;
+        width: min(100%, 1120px);
+        min-height: 72px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        border-bottom: 1px solid rgb(245 237 224 / 45%);
+        color: #F5EDE0;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        text-shadow: 0 1px 12px rgb(34 17 12 / 55%);
+      }
+
+      .video-hero-monogram-small {
+        font-size: 25px;
+        letter-spacing: 3px;
+      }
+
+      .video-hero-date-small,
+      .video-hero-kicker {
+        font-family: Inter, Arial, sans-serif;
+        font-size: 10px;
+        letter-spacing: 2.5px;
+        line-height: 1.6;
+        text-transform: uppercase;
+      }
+
+      .video-hero-main {
+        position: relative;
+        z-index: 1;
+        width: min(100%, 760px);
+        margin: auto;
+        padding: clamp(18px, 4vh, 38px) 12px;
+        color: #F5EDE0;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        text-align: center;
+      }
+
+      .video-hero-kicker {
+        margin: 0 0 clamp(8px, 2vh, 18px);
+        color: #EAD2B1;
+      }
+
+      .video-hero-mark {
+        position: relative;
+        width: clamp(190px, 46vw, 350px);
+        height: max(1.32em, clamp(205px, 44vh, 365px));
+        margin: 0 auto clamp(8px, 2vh, 20px);
+        color: #FFF8EB;
+        font-size: clamp(185px, 43vw, 340px);
+        font-weight: 400;
+        line-height: 0.68;
+        text-shadow: 0 3px 28px rgb(20 9 6 / 35%);
+        user-select: none;
+      }
+
+      .video-hero-mark span {
+        position: absolute;
+        display: block;
+      }
+
+      .video-hero-mark-a {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .video-hero-mark-r {
+        top: 0.64em;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .video-hero-mark-ampersand {
+        z-index: 1;
+        top: 44%;
+        left: 50%;
+        color: #E2BD91;
+        font-size: clamp(32px, 8vw, 56px);
+        font-style: italic;
+        line-height: 1;
+        text-shadow: 0 2px 14px rgb(20 9 6 / 55%);
+        transform: translate(-50%, -50%);
+      }
+
+      .video-hero-names {
+        margin: 0;
+        color: #FFF8EB;
+        font-size: clamp(27px, 6vw, 44px);
+        font-style: italic;
+        font-weight: 500;
+        line-height: 1.1;
+        text-shadow: 0 2px 16px rgb(20 9 6 / 55%);
+      }
+
+      .video-hero-description {
+        max-width: 440px;
+        margin: 12px auto 0;
+        color: #FFF8EB;
+        font-size: clamp(18px, 3vw, 22px);
+        line-height: 1.4;
+        text-shadow: 0 2px 12px rgb(20 9 6 / 65%);
+      }
+
+      .video-hero-date {
+        margin: 12px 0 20px;
+        color: #F0DFC7;
+        font-size: clamp(16px, 3vw, 20px);
+        font-weight: 500;
+      }
+
+      .video-hero-link {
+        min-width: 190px;
+        min-height: 54px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        padding: 14px 22px;
+        border: 1px solid rgb(245 237 224 / 72%);
+        background: rgb(48 26 20 / 38%);
+        color: #F5EDE0;
+        font-family: Inter, Arial, sans-serif;
+        font-size: 12px;
+        letter-spacing: 2.5px;
+        text-decoration: none;
+        text-shadow: 0 1px 6px rgb(20 9 6 / 55%);
+        transition: background-color 160ms ease, transform 160ms ease, border-color 160ms ease;
+      }
+
+      .video-hero-link:hover {
+        border-color: #F5EDE0;
+        background: rgb(122 66 46 / 78%);
+        transform: translateY(-2px);
+      }
+
+      .video-hero-link:focus-visible {
+        outline: 3px solid #AC7954;
+        outline-offset: 4px;
+      }
+
+      @media (max-width: 480px) {
+        .video-invitation-hero {
+          padding: 0 14px 28px;
+        }
+
+        .video-hero-masthead {
+          min-height: 64px;
+        }
+
+        .video-hero-date-small,
+        .video-hero-kicker {
+          font-size: 9px;
+          letter-spacing: 2px;
+        }
+
+        .video-hero-main {
+          padding: 14px 0;
+        }
+
+        .video-hero-mark {
+          width: clamp(180px, 58vw, 250px);
+          height: max(1.32em, clamp(190px, 34vh, 280px));
+          font-size: clamp(180px, 55vw, 245px);
+        }
+
+        .video-hero-names {
+          font-size: clamp(27px, 8vw, 36px);
+        }
+
+        .video-hero-date {
+          margin: 10px 0 16px;
+          font-size: 16px;
+        }
+
+      }
+
+      @media (max-height: 700px) {
+        .video-hero-mark {
+          height: max(1.32em, clamp(150px, 34vh, 250px));
+        }
+
+        .video-hero-main {
+          padding-top: 8px;
+          padding-bottom: 8px;
+        }
+      }
+
+      .music-player {
+        width: auto;
+        min-height: 0;
+        flex: none;
+        position: fixed;
+        right: max(16px, env(safe-area-inset-right));
+        bottom: max(16px, env(safe-area-inset-bottom));
+        z-index: 10;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 14px 8px 8px;
+        border: 1px solid #AC7954;
+        border-radius: 999px;
+        background: #F5EDE0;
+        color: #362019;
+        box-shadow: 0 4px 18px rgb(20 9 6 / 25%);
+        font: 11px Inter, Arial, sans-serif;
+      }
+
+      body > .music-player {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+      }
+
+      .music-toggle {
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        padding: 0;
+        border: 0;
+        border-radius: 50%;
+        background: #6B3728;
+        color: #F5EDE0;
+        cursor: pointer;
+        font: 20px Georgia, serif;
+      }
+
+      .music-toggle:focus-visible {
+        outline: 3px solid #AC7954;
+        outline-offset: 3px;
+      }
+
+      .music-toggle svg {
+        width: 20px;
+        height: 20px;
+        fill: currentColor;
+      }
+
+      .music-icon-pause {
+        display: none;
+      }
+
+      .music-toggle[aria-pressed="true"] .music-icon-play {
+        display: none;
+      }
+
+      .music-toggle[aria-pressed="true"] .music-icon-pause {
+        display: block;
+      }
+
+      .music-status {
+        max-width: 130px;
+        line-height: 1.4;
+      }
+
+      .program-icon {
+        width: 42px;
+        height: 42px;
+        flex: 0 0 42px;
+        display: grid;
+        place-items: center;
+        border: 1px solid rgb(213 184 153 / 58%);
+        border-radius: 50%;
+        background: linear-gradient(145deg, rgb(164 119 82 / 22%), rgb(50 28 22 / 72%));
+        color: #e6d2b5;
+        box-shadow: inset 0 1px 0 rgb(255 255 255 / 8%);
+      }
+
+      .program-icon svg {
+        display: block;
+        width: 25px;
+        height: 25px;
+        fill: none;
+        stroke: currentColor;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 1.8;
+      }
+
+      .program-icon .icon-fill {
+        fill: currentColor;
+        stroke: none;
+      }
+
+      .program-section {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+      }
+
+      .program-section::before {
+        position: absolute;
+        z-index: 0;
+        inset: 0;
+        background:
+          radial-gradient(circle at 84% 10%, transparent 0 35px, rgb(230 210 181 / 12%) 36px 37px, transparent 38px 55px, rgb(230 210 181 / 7%) 56px 57px, transparent 58px),
+          radial-gradient(circle at 13% 31%, transparent 0 27px, rgb(196 162 126 / 13%) 28px 29px, transparent 30px 43px, rgb(230 210 181 / 7%) 44px 45px, transparent 46px),
+          radial-gradient(circle at 75% 51%, transparent 0 42px, rgb(230 210 181 / 10%) 43px 44px, transparent 45px 63px, rgb(196 162 126 / 7%) 64px 65px, transparent 66px),
+          radial-gradient(circle at 20% 77%, transparent 0 34px, rgb(230 210 181 / 11%) 35px 36px, transparent 37px 52px, rgb(196 162 126 / 7%) 53px 54px, transparent 55px),
+          radial-gradient(circle at 88% 90%, transparent 0 28px, rgb(196 162 126 / 12%) 29px 30px, transparent 31px 45px, rgb(230 210 181 / 7%) 46px 47px, transparent 48px),
+          radial-gradient(circle at 17% 13%, rgb(230 210 181 / 43%) 0 1px, transparent 2px),
+          radial-gradient(circle at 39% 23%, rgb(196 162 126 / 48%) 0 1px, transparent 2px),
+          radial-gradient(circle at 65% 18%, rgb(230 210 181 / 38%) 0 1px, transparent 2px),
+          radial-gradient(circle at 92% 34%, rgb(196 162 126 / 48%) 0 1px, transparent 2px),
+          radial-gradient(circle at 43% 48%, rgb(230 210 181 / 40%) 0 1px, transparent 2px),
+          radial-gradient(circle at 9% 59%, rgb(196 162 126 / 44%) 0 1px, transparent 2px),
+          radial-gradient(circle at 57% 72%, rgb(230 210 181 / 38%) 0 1px, transparent 2px),
+          radial-gradient(circle at 38% 91%, rgb(196 162 126 / 42%) 0 1px, transparent 2px),
+          linear-gradient(135deg, rgb(107 70 54 / 10%), transparent 48%, rgb(164 119 82 / 8%));
+        content: "";
+        opacity: .72;
+        pointer-events: none;
+      }
+
+      .program-section > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      @media (max-width: 600px) {
+        div[style*="gap: 56px"] {
+          gap: 36px !important;
+        }
+
+        img.wedding-arch-image {
+          height: auto !important;
+          aspect-ratio: 1366 / 768;
+          border-top-left-radius: clamp(44px, 14vw, 72px) !important;
+          border-top-right-radius: clamp(44px, 14vw, 72px) !important;
+          object-fit: cover;
+          object-position: center;
+        }
+
+        div.wedding-party-image {
+          height: clamp(220px, 60vw, 280px) !important;
+        }
+
+        div[style*="font-size: 30px"] {
+          font-size: 25px !important;
+          line-height: 1.25 !important;
+        }
+
+        div[style*="font-size: 28px"] {
+          font-size: 24px !important;
+          line-height: 1.25 !important;
+        }
+
+        div[style*="gap: 40px"] {
+          gap: 30px !important;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+    </style>
+</head>
+<body>
+<section class="video-invitation-hero" aria-label="Angel and Razzty wedding film">
+  <video class="video-hero-background" id="hero-video" autoplay muted loop playsinline preload="metadata" poster="../assets/wedding-rings-background.png" aria-hidden="true">
+    <source src="../assets/wedding-intro.mp4" type="video/mp4">
+  </video>
+  <header class="video-hero-masthead">
+    <div class="video-hero-monogram-small" aria-label="Angel and Razzty">A / R</div>
+    <div class="video-hero-date-small">22 . 12 . 2026</div>
+  </header>
+  <main class="video-hero-main">
+    <p class="video-hero-kicker">A love story in motion</p>
+    <div class="video-hero-mark" role="img" aria-label="Angel and Razzty">
+      <span class="video-hero-mark-a" aria-hidden="true">A</span>
+      <span class="video-hero-mark-ampersand" aria-hidden="true">&amp;</span>
+      <span class="video-hero-mark-r" aria-hidden="true">R</span>
+    </div>
+    <h1 class="video-hero-names">Angel &amp; Razzty</h1>
+    <p class="video-hero-description">Together with their families, invite you to celebrate their wedding day.</p>
+    <p class="video-hero-date">December 22, 2026 <span aria-hidden="true">|</span> Tuesday</p>
+    <a class="video-hero-link" href="#wedding-palette">The wedding details <span aria-hidden="true">↓</span></a>
+  </main>
+</section>
+  <div id="wedding-palette" style="align-self: stretch; padding-left: 28px; padding-right: 28px; padding-top: 56px; padding-bottom: 56px; background: #EBDECC; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 28px; display: inline-flex">
+  <div style="color: #6B3728; font-size: 10px; font-family: Inter; font-weight: 400; line-height: 15px; letter-spacing: 2.50px; word-wrap: break-word">THE WEDDING PALETTE</div>
+  <div style="align-self: stretch; color: #362019; font-size: 44px; font-family: Cormorant Garamond; font-weight: 400; line-height: 46.20px; word-wrap: break-word">Color theme</div>
+  <div class="wedding-party-image" style="align-self: stretch; height: 145px; position: relative; overflow: hidden">
+    <img src="../assets/wedding-party.png" alt="The wedding party standing together">
+  </div>
+  <div class="palette-swatch" style="align-self: stretch; overflow: hidden; justify-content: center; align-items: center; gap: 20px; display: inline-flex">
+    <div style="width: 52px; height: 52px; background: #6B3728; border-radius: 9999px"></div>
+    <div style="overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 4px; display: inline-flex">
+      <div style="color: #362019; font-size: 28px; font-family: Cormorant Garamond; font-weight: 400; word-wrap: break-word">Espresso</div>
+      <div style="color: #6B3728; font-size: 11px; font-family: Inter; font-weight: 400; letter-spacing: 2px; word-wrap: break-word">#6b3728</div>
+    </div>
+  </div>
+</div>
+<div class="program-section" style="align-self: stretch; padding-left: 28px; padding-right: 28px; padding-top: 56px; padding-bottom: 56px; background: #301A14; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 32px; display: inline-flex">
+  <div style="color: #D5B899; font-size: 10px; font-family: Inter; font-weight: 400; line-height: 15px; letter-spacing: 2.50px; word-wrap: break-word">THE DAY, TOGETHER</div>
+  <div style="align-self: stretch; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: flex">
+    <div style="align-self: stretch; color: #F5EDE0; font-size: 44px; font-family: Cormorant Garamond; font-weight: 400; line-height: 46.20px; word-wrap: break-word">Program</div>
+    <div style="align-self: stretch; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
+      <div style="align-self: stretch; padding-top: 20px; padding-bottom: 20px; overflow: hidden; border-bottom: 1px #AC7954 solid; justify-content: flex-start; align-items: center; gap: 20px; display: inline-flex">
+        <span class="program-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <circle cx="9" cy="14" r="4.25"/>
+            <circle cx="15" cy="11" r="4.25"/>
+            <path d="m13.5 4 1.5-1.5L16.5 4 15 5.5 13.5 4Z"/>
+          </svg>
+        </span>
+        <div style="flex: 1 1 0; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 5px; display: inline-flex">
+          <div style="color: #D5B899; font-size: 11px; font-family: Inter; font-weight: 400; letter-spacing: 1.50px; word-wrap: break-word">2:00 PM</div>
+          <div style="align-self: stretch; color: #F5EDE0; font-size: 28px; font-family: Cormorant Garamond; font-weight: 400; word-wrap: break-word">Ceremony</div>
+        </div>
+      </div>
+      <div style="align-self: stretch; padding-top: 20px; padding-bottom: 20px; overflow: hidden; border-bottom: 1px #AC7954 solid; justify-content: flex-start; align-items: center; gap: 20px; display: inline-flex">
+        <span class="program-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <path d="M4 8h3.5l1.7-2h5.6l1.7 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2Z"/>
+            <circle cx="12" cy="14" r="3.5"/>
+            <circle class="icon-fill" cx="18.2" cy="10.8" r=".75"/>
+          </svg>
+        </span>
+        <div style="flex: 1 1 0; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 5px; display: inline-flex">
+          <div style="color: #D5B899; font-size: 11px; font-family: Inter; font-weight: 400; letter-spacing: 1.50px; word-wrap: break-word">3:00 PM</div>
+          <div style="align-self: stretch; color: #F5EDE0; font-size: 28px; font-family: Cormorant Garamond; font-weight: 400; word-wrap: break-word">Photo Op</div>
+        </div>
+      </div>
+      <div style="align-self: stretch; padding-top: 20px; padding-bottom: 20px; overflow: hidden; border-bottom: 1px #AC7954 solid; justify-content: flex-start; align-items: center; gap: 20px; display: inline-flex">
+        <span class="program-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <path d="M4 20h16M5.5 15h13v5h-13ZM7.5 10h9v5h-9Z"/>
+            <path d="M12 10V5"/>
+            <path d="M12 3.2c1.5 1.1 1.1 2.4 0 3.1-1.1-.7-1.5-2 0-3.1Z"/>
+            <path d="M8.5 17.5h.01M12 17.5h.01M15.5 17.5h.01"/>
+          </svg>
+        </span>
+        <div style="flex: 1 1 0; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 5px; display: inline-flex">
+          <div style="color: #D5B899; font-size: 11px; font-family: Inter; font-weight: 400; letter-spacing: 1.50px; word-wrap: break-word">4:00 PM</div>
+          <div style="align-self: stretch; color: #F5EDE0; font-size: 28px; font-family: Cormorant Garamond; font-weight: 400; word-wrap: break-word">Reception</div>
+        </div>
+      </div>
+      <div style="align-self: stretch; padding-top: 20px; padding-bottom: 20px; overflow: hidden; border-bottom: 1px #AC7954 solid; justify-content: flex-start; align-items: center; gap: 20px; display: inline-flex">
+        <span class="program-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <path d="M5 3v5M8 3v5M11 3v5M5 8a3 3 0 0 0 6 0M8 11v10"/>
+            <path d="M18 3c-1.6 2.2-2.5 4.6-2.5 7 0 1.3.8 2.1 2 2.4V21"/>
+          </svg>
+        </span>
+        <div style="flex: 1 1 0; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 5px; display: inline-flex">
+          <div style="color: #D5B899; font-size: 11px; font-family: Inter; font-weight: 400; letter-spacing: 1.50px; word-wrap: break-word">5:00 PM</div>
+          <div style="align-self: stretch; color: #F5EDE0; font-size: 28px; font-family: Cormorant Garamond; font-weight: 400; word-wrap: break-word">Early Dinner</div>
+        </div>
+      </div>
+      <div style="align-self: stretch; padding-top: 20px; padding-bottom: 20px; overflow: hidden; border-bottom: 1px #AC7954 solid; justify-content: flex-start; align-items: center; gap: 20px; display: inline-flex">
+        <span class="program-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <path d="M9 17V5l10-2v12"/>
+            <path d="M9 8l10-2"/>
+            <ellipse class="icon-fill" cx="6.5" cy="18.5" rx="2.7" ry="1.8" transform="rotate(-20 6.5 18.5)"/>
+            <ellipse class="icon-fill" cx="16.5" cy="16.5" rx="2.7" ry="1.8" transform="rotate(-20 16.5 16.5)"/>
+          </svg>
+        </span>
+        <div style="flex: 1 1 0; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 5px; display: inline-flex">
+          <div style="color: #D5B899; font-size: 11px; font-family: Inter; font-weight: 400; letter-spacing: 1.50px; word-wrap: break-word">6:00 PM onwards</div>
+          <div style="align-self: stretch; color: #F5EDE0; font-size: 28px; font-family: Cormorant Garamond; font-weight: 400; word-wrap: break-word">Acoustic Band</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="align-self: stretch; overflow: hidden; justify-content: flex-start; align-items: center; gap: 18px; display: inline-flex">
+    <div style="flex: 1 1 0; height: 1px; background: #AC7954"></div>
+    <div style="color: #F5EDE0; font-size: 30px; font-family: Great Vibes; font-weight: 400; word-wrap: break-word">Angel & Razzty</div>
+    <div style="flex: 1 1 0; height: 1px; background: #AC7954"></div>
+  </div>
+</div>
+<section class="entourage-section" aria-labelledby="entourage-title">
+  <video class="entourage-background-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+    <source src="../assets/videos/waves.mp4" type="video/mp4">
+  </video>
+  <div class="entourage-shell">
+    <header class="entourage-heading">
+      <p class="entourage-kicker">The people by our side</p>
+      <h2 class="entourage-title" id="entourage-title">Wedding entourage</h2>
+      <p class="entourage-intro">With love and gratitude, meet the family and friends celebrating with us.</p>
+    </header>
+
+    <div class="entourage-track" id="entourage-track" aria-label="Wedding entourage cards" aria-roledescription="carousel" tabindex="0">
+      <article class="entourage-slide" role="group" aria-roledescription="slide" aria-label="1 of 3: Our families and principal sponsors">
+        <div class="entourage-card">
+          <h3 class="entourage-card-heading">With our families</h3>
+          <div class="family-grid">
+            <section class="family-card">
+              <h4 class="entourage-group-title">Parents of the Bride</h4>
+              <p class="family-names">Mayette B. Taño</p>
+              <p class="family-names">Angelito P. Taño</p>
+            </section>
+            <section class="family-card">
+              <h4 class="entourage-group-title">Parents of the Groom</h4>
+              <p class="family-names">Marietta R. Redulfin</p>
+              <p class="family-names">John T. Redulfin</p>
+            </section>
+          </div>
+          <div>
+            <h4 class="sponsor-heading">Principal sponsors</h4>
+            <div class="sponsor-grid">
+              <div class="sponsor-card">Mrs. Remedios &amp; Mr. Joel Domaoal</div>
+              <div class="sponsor-card">Mrs. Abi &amp; Mr. John Espina</div>
+              <div class="sponsor-card">Mrs. Mary Jean &amp; Mr. Jovilan Cagabhion</div>
+              <div class="sponsor-card">Mrs. Maritess &amp; Mr. Diomar Morte</div>
+              <div class="sponsor-card">Mrs. Jershey Palomo</div>
+              <div class="sponsor-card">Engr. Dominic Camique</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="entourage-slide" role="group" aria-roledescription="slide" aria-label="2 of 3: Secondary sponsors">
+        <div class="entourage-card">
+          <h3 class="entourage-card-heading">With love &amp; gratitude</h3>
+          <div>
+            <h4 class="sponsor-heading">Secondary sponsors</h4>
+            <div class="sponsor-grid">
+              <div class="sponsor-card">Noralyn Miranda</div>
+              <div class="sponsor-card">Ruby Diaz</div>
+              <div class="sponsor-card">Helrey John Dela Cruz</div>
+              <div class="sponsor-card">Engr. Bobby Diaz</div>
+              <div class="sponsor-card">Richie Camacho</div>
+              <div class="sponsor-card">Jessilyn Diosana</div>
+              <div class="sponsor-card">Lailanie Hadraque</div>
+              <div class="sponsor-card">Engr. Ladi Tuyac</div>
+              <div class="sponsor-card">Edgar Nomananap</div>
+              <div class="sponsor-card">Ivy Norcos</div>
+              <div class="sponsor-card">Jeffrey Requiz</div>
+              <div class="sponsor-card">Randolf Arciaga</div>
+              <div class="sponsor-card">Marites Bacabac</div>
+              <div class="sponsor-card">Toto Bacabac</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="entourage-slide" role="group" aria-roledescription="slide" aria-label="3 of 3: Wedding party">
+        <div class="entourage-card">
+          <h3 class="entourage-card-heading">Our wedding party</h3>
+          <div class="wedding-party-grid">
+            <section class="entourage-group">
+              <h4 class="entourage-group-title">Maid of Honor</h4>
+              <p class="entourage-names">Kate Lee B. Taño</p>
+            </section>
+            <section class="entourage-group">
+              <h4 class="entourage-group-title">Best Man</h4>
+              <p class="entourage-names">Reymart Felisilda</p>
+            </section>
+            <section class="entourage-group">
+              <h4 class="entourage-group-title">Flower Girl</h4>
+              <p class="entourage-names">Zhyreen S. Villaret</p>
+            </section>
+            <section class="entourage-group">
+              <h4 class="entourage-group-title">Ring Bearer</h4>
+              <p class="entourage-names">Christopher Axel Cequiña</p>
+            </section>
+            <section class="entourage-group">
+              <h4 class="entourage-group-title">Bride’s Maids</h4>
+              <p class="entourage-names">Jemima Ashney Taño</p>
+              <p class="entourage-names">Faith Ann Ocaban</p>
+              <p class="entourage-names">Cristyl Faith Cequiña</p>
+              <p class="entourage-names">Emie Rose Lano</p>
+              <p class="entourage-names">Jainee Mae Mangharal</p>
+            </section>
+            <section class="entourage-group">
+              <h4 class="entourage-group-title">Groom’s Men</h4>
+              <p class="entourage-names">John Brix Redulfin</p>
+              <p class="entourage-names">Kian Francis Cornelio</p>
+              <p class="entourage-names">Karl Jim Ruiz</p>
+              <p class="entourage-names">Cris Stephene Rendon</p>
+              <p class="entourage-names">Earl Mark Jones Mangharal</p>
+            </section>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <nav class="entourage-controls" aria-label="Wedding entourage card controls">
+      <div class="entourage-arrows">
+        <button class="entourage-arrow" id="entourage-previous" type="button" aria-label="Previous card" disabled>‹</button>
+        <button class="entourage-arrow" id="entourage-next" type="button" aria-label="Next card">›</button>
+      </div>
+      <div class="entourage-pagination" aria-label="Choose a card">
+        <button class="entourage-dot" type="button" aria-label="Show card 1: Family and principal sponsors" aria-current="true"></button>
+        <button class="entourage-dot" type="button" aria-label="Show card 2: Secondary sponsors" aria-current="false"></button>
+        <button class="entourage-dot" type="button" aria-label="Show card 3: Wedding party" aria-current="false"></button>
+      </div>
+      <span id="entourage-status" aria-live="polite">1 / 3</span>
+    </nav>
+  </div>
+</section>
+<div style="align-self: stretch; padding-top: 56px; padding-bottom: 32px; padding-left: 28px; padding-right: 28px; background: #F5EDE0; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 40px; display: inline-flex">
+  <div style="color: #6B3728; font-size: 10px; font-family: Inter; font-weight: 400; line-height: 15px; letter-spacing: 2.50px; word-wrap: break-word">A NOTE FOR OUR GUESTS</div>
+  <div style="align-self: stretch; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 56px; display: flex">
+    <div style="align-self: stretch; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: flex">
+      <div style="align-self: stretch; color: #362019; font-size: 44px; font-family: Cormorant Garamond; font-weight: 400; line-height: 46.20px; word-wrap: break-word">Reception</div>
+      <div style="align-self: stretch; color: #362019; font-size: 28px; font-family: Cormorant Garamond; font-weight: 400; line-height: 32.20px; word-wrap: break-word">Krizscott Silver’s Hideaway Farm</div>
+      <div style="align-self: stretch; color: #6B3728; font-size: 21px; font-family: Cormorant Garamond; font-weight: 400; line-height: 29.40px; word-wrap: break-word">Silway 8, Polomolok, South Cotabato, 9504</div>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Krizscott+Silver%27s+Hideaway+Farm%2C+Silway+8%2C+Polomolok%2C+South+Cotabato+9504" target="_blank" rel="noopener noreferrer" style="width: 100%; min-height: 96px; padding: 24px; display: flex; align-items: center; justify-content: center; border: 1px solid #AC7954; color: #6B3728; font: 11px Inter, Arial, sans-serif; letter-spacing: 2px; text-align: center; text-decoration: none">OPEN RECEPTION LOCATION IN MAPS ↗</a>
+    </div>
+    <div style="align-self: stretch; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 32px; display: flex">
+      <div style="align-self: stretch; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 20px; display: flex">
+        <div style="align-self: stretch; color: #362019; font-size: 44px; font-family: Cormorant Garamond; font-weight: 400; line-height: 46.20px; word-wrap: break-word">Gift guide</div>
+        <div style="align-self: stretch; color: #362019; font-size: 21px; font-family: Cormorant Garamond; font-weight: 400; line-height: 31.50px; word-wrap: break-word">As we begin our new chapter together, your love and support mean everything to us. If you wish to give a gift, a Monetary Gift toward our future dreams would be greatly appreciated.</div>
+      </div>
+      <div style="align-self: stretch; height: 1px; background: #D5B899"></div>
+      <div style="align-self: stretch; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 20px; display: flex">
+        <div style="align-self: stretch; color: #6B3728; font-size: 30px; font-family: Cormorant Garamond; font-style: italic; font-weight: 700; line-height: 33px; word-wrap: break-word">Can I bring someone with me?</div>
+        <div style="align-self: stretch; color: #362019; font-size: 21px; font-family: Cormorant Garamond; font-weight: 700; line-height: 31.50px; word-wrap: break-word">Unfortunately, due to space and seating constraints especially at the receptions venue we kindly ask for your understanding in helping us avoid overcrowding. This is to ensure that every RSVP guest has a comfortable and enjoyable experience on our wedding celebration.</div>
+      </div>
+    </div>
+  </div>
+  <div style="align-self: stretch; overflow: hidden; justify-content: flex-start; align-items: center; gap: 18px; display: inline-flex">
+    <div style="flex: 1 1 0; height: 1px; background: #AC7954"></div>
+    <div style="color: #6B3728; font-size: 30px; font-family: Great Vibes; font-weight: 400; word-wrap: break-word">Angel & Razzty</div>
+    <div style="flex: 1 1 0; height: 1px; background: #AC7954"></div>
+  </div>
+  <div style="align-self: stretch; text-align: center; color: #6B3728; font-size: 9px; font-family: Inter; font-weight: 400; letter-spacing: 2px; word-wrap: break-word">ANGEL & RAZZTY · DECEMBER 22, 2026</div>
+</div>
+</div>    
+<div class="music-player">
+  <button class="music-toggle" id="music-toggle" type="button" aria-label="Play background music" aria-pressed="false">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path class="music-icon-play" d="M7 4.5a1 1 0 0 1 1.5-.86l11 6.5a2.15 2.15 0 0 1 0 3.72l-11 6.5A1 1 0 0 1 7 19.5z"/>
+      <path class="music-icon-pause" d="M7 5h4v14H7zM15 5h4v14h-4z"/>
+    </svg>
+  </button>
+  <span class="music-status" id="music-status" role="status" aria-live="polite">Background music</span>
+</div>
+<audio id="wedding-music" loop preload="metadata">
+  <source src="../assets/audio/December%20Avenue%20-%20Saksi%20Ang%20Langit%20_%20LYRICS.mp3" type="audio/mpeg">
+</audio>
+<script src="../assets/entourage-carousel.js"></script>
+<script src="../assets/wedding-music.js"></script>
+</body>
+</html>
