@@ -53,58 +53,48 @@
       }
 
       .palette-swatches {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 24px;
+        width: 100%;
+        align-self: stretch;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        justify-items: center;
+        align-items: start;
+        gap: 20px 12px;
       }
 
-      .palette-new-colors {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        gap: 28px;
-      }
-
+      .palette-swatches > .palette-swatch,
       .palette-color-option {
-        width: 116px;
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: flex-start;
         gap: 8px;
+      }
+
+      .palette-new-colors {
+        display: contents;
       }
 
       .palette-paint-swatch {
         display: block;
-        width: 116px;
-        height: 116px;
+        width: 52px;
+        height: 52px;
+        flex: 0 0 52px;
         overflow: visible;
       }
 
       .palette-color-name {
         color: #362019;
-        font: 400 22px/1.1 "Cormorant Garamond", Georgia, serif;
+        font: 400 20px/1.1 "Cormorant Garamond", Georgia, serif;
+        text-align: center;
       }
 
       .palette-color-hex {
         color: #6b3728;
         font: 400 10px/1.2 Inter, Arial, sans-serif;
         letter-spacing: 1.5px;
-      }
-
-      @media (max-width: 380px) {
-        .palette-new-colors {
-          gap: 16px;
-        }
-
-        .palette-color-option,
-        .palette-paint-swatch {
-          width: 104px;
-        }
-
-        .palette-paint-swatch {
-          height: 104px;
-        }
+        text-align: center;
       }
 
       body > div {
@@ -940,12 +930,10 @@
     <img src="../assets/wedding-party.png" alt="The wedding party standing together">
   </div>
   <div class="palette-swatches">
-  <div class="palette-swatch" style="overflow: hidden; justify-content: center; align-items: center; gap: 20px; display: inline-flex">
+  <div class="palette-swatch">
     <div style="width: 52px; height: 52px; background: #6B3728; border-radius: 9999px"></div>
-    <div style="overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 4px; display: inline-flex">
-      <div style="color: #362019; font-size: 28px; font-family: Cormorant Garamond; font-weight: 400; word-wrap: break-word">Espresso</div>
-      <div style="color: #6B3728; font-size: 11px; font-family: Inter; font-weight: 400; letter-spacing: 2px; word-wrap: break-word">#6b3728</div>
-    </div>
+    <span class="palette-color-name">Espresso Brown</span>
+    <span class="palette-color-hex">#6B3728</span>
   </div>
   <div class="palette-new-colors" aria-label="Additional wedding colors">
     <div class="palette-color-option">
