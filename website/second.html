@@ -48,8 +48,63 @@
       }
 
       #wedding-palette > .wedding-party-image,
-      #wedding-palette > .palette-swatch {
+      #wedding-palette > .palette-swatches {
         z-index: 3;
+      }
+
+      .palette-swatches {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+      }
+
+      .palette-new-colors {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 28px;
+      }
+
+      .palette-color-option {
+        width: 116px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .palette-paint-swatch {
+        display: block;
+        width: 116px;
+        height: 116px;
+        overflow: visible;
+      }
+
+      .palette-color-name {
+        color: #362019;
+        font: 400 22px/1.1 "Cormorant Garamond", Georgia, serif;
+      }
+
+      .palette-color-hex {
+        color: #6b3728;
+        font: 400 10px/1.2 Inter, Arial, sans-serif;
+        letter-spacing: 1.5px;
+      }
+
+      @media (max-width: 380px) {
+        .palette-new-colors {
+          gap: 16px;
+        }
+
+        .palette-color-option,
+        .palette-paint-swatch {
+          width: 104px;
+        }
+
+        .palette-paint-swatch {
+          height: 104px;
+        }
       }
 
       body > div {
@@ -884,12 +939,34 @@
   <div class="wedding-party-image" style="align-self: stretch; height: 145px; position: relative; overflow: hidden">
     <img src="../assets/wedding-party.png" alt="The wedding party standing together">
   </div>
-  <div class="palette-swatch" style="align-self: stretch; overflow: hidden; justify-content: center; align-items: center; gap: 20px; display: inline-flex">
+  <div class="palette-swatches">
+  <div class="palette-swatch" style="overflow: hidden; justify-content: center; align-items: center; gap: 20px; display: inline-flex">
     <div style="width: 52px; height: 52px; background: #6B3728; border-radius: 9999px"></div>
     <div style="overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 4px; display: inline-flex">
       <div style="color: #362019; font-size: 28px; font-family: Cormorant Garamond; font-weight: 400; word-wrap: break-word">Espresso</div>
       <div style="color: #6B3728; font-size: 11px; font-family: Inter; font-weight: 400; letter-spacing: 2px; word-wrap: break-word">#6b3728</div>
     </div>
+  </div>
+  <div class="palette-new-colors" aria-label="Additional wedding colors">
+    <div class="palette-color-option">
+      <svg class="palette-paint-swatch" viewBox="0 0 120 120" role="img" aria-label="Deep Mocha color swatch">
+        <path d="M59 5c7-1 12 3 19 3 5 0 7 3 12 4 5 2 7 7 12 10 5 4 5 10 9 14 4 5 3 10 5 16 2 6-1 10 0 16 0 7-5 10-6 16-2 6-6 9-9 14-4 5-10 5-15 9-5 3-10 2-16 4-6 2-11-1-17 0-6 1-10-4-16-6-6-2-9-7-13-11-4-5-4-11-7-16-3-6-1-11-2-17-1-7 2-11 3-17 1-7 6-10 9-15 3-6 9-7 14-11 5-4 10-3 15-6 3-2 5-6 8-7Z" fill="#5B3426"/>
+        <path d="M23 37c5-10 13-16 22-21M15 54c2-7 3-10 6-14M98 22c5 4 8 8 11 14M107 82c-4 10-10 16-18 21M35 105c-7-4-12-9-16-15" fill="none" stroke="#5B3426" stroke-linecap="round" stroke-width="1.5"/>
+        <path d="M42 13c6-3 11-4 17-4M108 45c3 7 4 13 4 19M74 111c-7 2-12 2-18 2M8 70c0-5 1-8 2-12" fill="none" stroke="#5B3426" stroke-linecap="round" stroke-width="1"/>
+      </svg>
+      <span class="palette-color-name">Deep Mocha</span>
+      <span class="palette-color-hex">#5B3426</span>
+    </div>
+    <div class="palette-color-option">
+      <svg class="palette-paint-swatch" viewBox="0 0 120 120" role="img" aria-label="Cinnamon color swatch">
+        <path d="M61 6c6 0 10 3 16 4 6 1 9 4 14 7 6 3 7 9 11 14 4 5 4 10 6 16 2 6 0 11 1 17 1 6-3 11-5 17-2 6-7 9-11 14-4 5-10 6-15 9-6 3-11 1-17 3-6 2-11-2-17-3-6-1-10-6-15-9-5-4-7-9-11-14-4-6-3-11-4-17-2-6 1-11 2-17 1-6 5-10 8-15 3-6 8-8 13-12 5-4 10-4 15-7 4-2 6-6 9-7Z" fill="#88543A"/>
+        <path d="M25 35c5-9 12-15 21-20M13 57c2-6 4-10 7-14M101 25c5 4 8 9 10 14M109 80c-4 10-10 17-18 22M37 107c-8-4-13-8-18-15" fill="none" stroke="#88543A" stroke-linecap="round" stroke-width="1.5"/>
+        <path d="M46 11c5-2 9-3 14-3M110 48c2 6 3 11 3 17M77 112c-6 2-11 3-16 3M8 72c0-5 1-8 2-12" fill="none" stroke="#88543A" stroke-linecap="round" stroke-width="1"/>
+      </svg>
+      <span class="palette-color-name">Cinnamon</span>
+      <span class="palette-color-hex">#88543A</span>
+    </div>
+  </div>
   </div>
 </div>
 <div class="program-section" style="align-self: stretch; padding-left: 28px; padding-right: 28px; padding-top: 56px; padding-bottom: 56px; background: #301A14; overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 32px; display: inline-flex">
