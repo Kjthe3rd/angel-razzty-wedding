@@ -1,0 +1,3 @@
+[build]
+  command = "bash scripts/build-static-site.sh"
+  publish = "dist"

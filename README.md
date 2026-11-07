@@ -1,5 +1,11 @@
 # Angel & Razzty Wedding Website
 
-This repository contains the static wedding invitation and details pages in `website/`, with shared media and scripts in `assets/`.
+This repository contains the wedding invitation pages in `website/` and their shared media in `assets/`.
 
-GitHub Pages is published automatically from the `main` branch by the workflow in `.github/workflows/deploy.yml`. The workflow copies the invitation pages and shared assets into a Pages-ready site.
+## Deploy with Netlify
+
+1. In Netlify, choose **Add new site** → **Import an existing project** and connect `Kjthe3rd/angel-razzty-wedding`.
+2. Select the `main` branch. Netlify reads the build command and publish directory from `netlify.toml`.
+3. Authorize the repository and deploy. Future pushes to `main` will trigger a new deploy.
+
+The build publishes only the invitation pages and required assets; local root-level files are not included.
